@@ -45,7 +45,6 @@ It is easily extendable
   2. Simple scaffold to feed product and offer information.
   3. Simple UI to display the functionality using react.
 </pre>
-  What Application can do:
 
 
 ## Overview of each model created
