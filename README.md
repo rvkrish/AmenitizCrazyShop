@@ -25,6 +25,7 @@ It is easily extendable
 
 - Download the source code.
 - Run the **bundle install** command.
+- Run the **rails db:migrate** command.
 - Run **yarn build**
 - Install Redis Serve.
 - Start **redis server**
