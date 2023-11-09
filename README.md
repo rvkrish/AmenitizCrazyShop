@@ -63,7 +63,7 @@ The `Cart` model has several key functionalities this is a non active record mod
 - Emptying the Cart.
 - Calculating the Total Price of the cart
   
-The `Product` and `Offer` model  helps to store respective product and Offers related information below is the respective ERD. 
+The `Product` and `Offer` model  helps to store respective product and Offers related information. Below is the respective ERD. <br/> 
 <img src='https://github.com/rvkrish/AmenitizCrazyShop/blob/83c3369cd437e47df3a774285847e2edf2bf58b9/public/Screenshot%202023-11-09%20at%206.35.12%20PM.png' width='600'>
 
 
