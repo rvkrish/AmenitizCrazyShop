@@ -56,7 +56,7 @@ The `CartItem` model has several key functionalities this is a non active record
 - Incrementing the quantity of existing products in the cart.
 - Updating the price and quantity of cart items.
 
-The `Cart` model has several key functionalities this is a non active record model:
+The `Cart` model has several key functionalities. This is a nonactive record model:
 
 - Adding Products to the Cart
 - Emptying the Cart.
@@ -66,7 +66,48 @@ The `Product` and `Offer` model  helps to store respective product and Offers re
 <img src='https://github.com/rvkrish/AmenitizCrazyShop/blob/83c3369cd437e47df3a774285847e2edf2bf58b9/public/Screenshot%202023-11-09%20at%206.35.12%20PM.png' width='600'>
 
 
-**Some known improvements that can be made:**
+The `Offer` model implements different types of offers, such as BOGO (Buy One Get One) and bulk discounts, to products like Green Tea, Strawberries, and Coffee.
+
+
+It has some key below methods which caliculate the core logic:
+
+### `apply_bogo_offer`
+
+- **Purpose**: Implements the "Buy One, Get One Free" (BOGO) offer.
+- **Parameters**:
+  - `product`: The product to which the offer is applied.
+  - `quantity`: The quantity of the product being purchased.
+- **Functionality**:
+  - The method calculates the total price for a given quantity of a product under the BOGO offer.
+  - For an even quantity, the customer pays for half the items as every second item is free.
+  - For an odd quantity, the customer pays for half the items plus one.
+  - Formula Used: `(quantity / 2 + quantity % 2) * product.price`.
+
+### `apply_bulk_discount_point_five`
+
+- **Purpose**: Applies a bulk discount for strawberries.
+- **Parameters**:
+  - `product`: The product (strawberries) to which the offer is applied.
+  - `quantity`: The quantity of strawberries being purchased.
+- **Functionality**:
+  - If the quantity is 3 or more, a discount of 0.5 euros is applied to each item.
+  - The total price is calculated as `quantity * (product.price - 0.5)`.
+  - If the quantity is less than 3, the regular price is applied (`quantity * product.price`).
+
+### `apply_bulk_discount_two_by_three`
+
+- **Purpose**: Applies a bulk discount for coffee.
+- **Parameters**:
+  - `product`: The product (coffee) to which the offer is applied.
+  - `quantity`: The quantity of coffee being purchased.
+- **Functionality**:
+  - If the quantity is 3 or more, the customer pays 2/3 of the original price per item.
+  - The total price is calculated as `quantity * (product.price * 2 / 3)`.
+  - If the quantity is less than 3, the regular price is applied (`quantity * product.price`).
+
+
+
+<h2>Some known improvements that can be made:</h2>
 
 - We can add a coverage report.
 - flash messages and notices.
